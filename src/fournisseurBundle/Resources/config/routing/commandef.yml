@@ -1,0 +1,24 @@
+commandef_index:
+    path:     /
+    defaults: { _controller: "fournisseurBundle:commandeF:index" }
+    methods:  GET
+
+commandef_show:
+    path:     /{id}/show
+    defaults: { _controller: "fournisseurBundle:commandeF:show" }
+    methods:  GET
+
+commandef_new:
+    path:     /new
+    defaults: { _controller: "fournisseurBundle:commandeF:new" }
+    methods:  [GET, POST]
+
+commandef_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "fournisseurBundle:commandeF:edit" }
+    methods:  [GET, POST]
+
+commandef_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "fournisseurBundle:commandeF:delete" }
+    methods:  DELETE

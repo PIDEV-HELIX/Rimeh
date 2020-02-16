@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <center>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-40 col-lg-30">
+            <div class="login-content">
+    <h1>Societe</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ societe.id }}</td>
+            </tr>
+            <tr>
+                <th>Names</th>
+                <td>{{ societe.nameS }}</td>
+            </tr>
+            <tr>
+                <th>Addresse</th>
+                <td>{{ societe.Addresse }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ societe.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ societe.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('societe_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('societe_edit', { 'id': societe.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+            </div></div></div></div>
+    </center>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    fournisseur.example:
+#        class: fournisseurBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

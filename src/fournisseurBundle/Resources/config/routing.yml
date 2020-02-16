@@ -1,0 +1,12 @@
+fournisseur_societe:
+    resource: "@fournisseurBundle/Resources/config/routing/societe.yml"
+    prefix:   /societe
+fournisseur_categorieF:
+    resource: "@fournisseurBundle/Resources/config/routing/categorief.yml"
+    prefix:   /categorie
+fournisseur_commandef:
+    resource: "@fournisseurBundle/Resources/config/routing/commandef.yml"
+    prefix:   /commandef
+fournisseur_homepage:
+    path:     /
+    defaults: { _controller: fournisseurBundle:Default:index }

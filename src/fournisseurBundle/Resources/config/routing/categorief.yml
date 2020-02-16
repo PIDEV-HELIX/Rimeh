@@ -1,0 +1,24 @@
+categorief_index:
+    path:     /
+    defaults: { _controller: "fournisseurBundle:categorieF:index" }
+    methods:  GET
+
+categorief_show:
+    path:     /{id}/show
+    defaults: { _controller: "fournisseurBundle:categorieF:show" }
+    methods:  GET
+
+categorief_new:
+    path:     /new
+    defaults: { _controller: "fournisseurBundle:categorieF:new" }
+    methods:  [GET, POST]
+
+categorief_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "fournisseurBundle:categorieF:edit" }
+    methods:  [GET, POST]
+
+categorief_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "fournisseurBundle:categorieF:delete" }
+    methods:  DELETE

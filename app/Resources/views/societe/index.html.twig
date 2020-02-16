@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <center>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-40 col-lg-30">
+            <div class="login-content">
+    <h1>Societes list</h1>
+
+    <table border="2">
+        <thead>
+            <tr>
+
+                <th>Names</th>
+                <th>Addresse</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for societe in societes %}
+            <tr>
+                <td>{{ societe.nameS }}</td>
+                <td>{{ societe.Addresse }}</td>
+                <td>{{ societe.email }}</td>
+                <td>{{ societe.telephone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('societe_show', { 'id': societe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('societe_edit', { 'id': societe.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('societe_delete', { 'id': societe.id }) }}">delete</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('societe_new') }}">Create a new societe</a>
+        </li>
+    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    </center>
+{% endblock %}
