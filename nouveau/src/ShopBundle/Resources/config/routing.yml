@@ -1,0 +1,103 @@
+shop_homepage:
+    path:     /
+    defaults: { _controller: ShopBundle:Default:index }
+
+veh_new:
+    path:     /veh/new
+    defaults: { _controller: ShopBundle:Veh:new }
+
+veh_index:
+    path:     /veh
+    defaults: { _controller: ShopBundle:Veh:index }
+
+veh_show:
+    path:     /veh/show/{idad}
+    defaults: { _controller: ShopBundle:Veh:show }
+
+veh_edit:
+    path:     /veh/edit/{idad}
+    defaults: { _controller: ShopBundle:Veh:edit }
+
+veh_delete:
+    path:     /veh/delete/{idad}
+    defaults: { _controller: ShopBundle:Veh:delete }
+
+
+soc_new:
+    path:     /soc/new
+    defaults: { _controller: ShopBundle:Soc:new }
+
+soc_index:
+    path:     /soc
+    defaults: { _controller: ShopBundle:Soc:index }
+
+soc_user_index:
+    path:     /soc/user
+    defaults: { _controller: ShopBundle:Soc:user_index }
+
+soc_show:
+    path:     /soc/show/{ids}
+    defaults: { _controller: ShopBundle:Soc:show }
+
+soc_user_show:
+    path:     /soc/user/show/{ids}
+    defaults: { _controller: ShopBundle:Soc:user_show }
+
+soc_edit:
+    path:     /soc/edit/{ids}
+    defaults: { _controller: ShopBundle:Soc:edit }
+
+soc_delete:
+    path:     /soc/delete/{ids}
+    defaults: { _controller: ShopBundle:Soc:delete }
+
+admin_send:
+    path:     /mail/send/{ids}
+    defaults: { _controller: ShopBundle:Mail:send }
+
+mail_search:
+    path:   /inbox
+    defaults: { _controller: ShopBundle:Mail:search}
+
+ajax_search:
+    path:   /search
+    defaults: { _controller: ShopBundle:Soc:search}
+
+livr_index:
+    path:     /livrr
+    defaults: { _controller: ShopBundle:Livr:index}
+
+livr_show:
+    path:     /{idv}/show
+    defaults: { _controller: ShopBundle:Livr:show }
+
+
+livr_new:
+    path:     /new
+    defaults: { _controller: ShopBundle:Livr:new }
+
+
+livr_edit:
+    path:     /edit/{idv}
+    defaults: { _controller: ShopBundle:Livr:edit }
+
+
+livr_delete:
+    path:     /delete/{idv}
+    defaults: { _controller: ShopBundle:Livr:delete }
+
+livr_trait:
+    path:     /livr/trait
+    defaults: { _controller: ShopBundle:Livr:trait }
+
+livr_indexAdmin:
+    path:     /livr/Admin
+    defaults: { _controller: ShopBundle:Livr:indexLivrAdmin }
+
+livr_tri:
+    path:     /tri
+    defaults: { _controller: ShopBundle:Livr:tri }
+
+mail_searchh:
+    path:   /inboxx
+    defaults: { _controller: ShopBundle:Mail:searchh}

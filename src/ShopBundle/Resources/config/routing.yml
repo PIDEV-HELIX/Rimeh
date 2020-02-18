@@ -1,0 +1,14 @@
+shop_produit:
+    resource: "@ShopBundle/Resources/config/routing/produit.yml"
+    prefix:   /produitF
+
+
+ajouter:
+    path:     /ajouter
+    defaults: { _controller: ShopBundle:Test:ajouter }
+
+
+shop_livraison:
+    resource: "@ShopBundle/Resources/config/routing/liv.yml"
+    prefix:   /livF
+

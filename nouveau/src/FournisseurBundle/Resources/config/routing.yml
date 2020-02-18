@@ -1,0 +1,39 @@
+cat_new:
+    path:     /cat/new
+    defaults: { _controller: FournisseurBundle:CategorieF:new }
+
+cat_index:
+    path:     /cat
+    defaults: { _controller: FournisseurBundle:CategorieF:index }
+
+cat_show:
+    path:     /cat/show/{id}
+    defaults: { _controller: FournisseurBundle:CategorieF:show }
+
+cat_edit:
+    path:     /cat/edit/{id}
+    defaults: { _controller: FournisseurBundle:CategorieF:edit }
+
+cat_delete:
+    path:     /cat/delete/{id}
+    defaults: { _controller: FournisseurBundle:CategorieF:delete }
+
+societe_new:
+    path:     /societe/new
+    defaults: { _controller: FournisseurBundle:Societe:new }
+
+societe_index:
+    path:     /societe
+    defaults: { _controller: FournisseurBundle:Societe:index }
+
+societe_show:
+    path:     /societe/show/{ids}
+    defaults: { _controller: FournisseurBundle:Societe:show }
+
+societe_edit:
+    path:     /societe/edit/{ids}
+    defaults: { _controller: FournisseurBundle:Societe:edit }
+
+societe_delete:
+    path:     /societe/delete/{ids}
+    defaults: { _controller: FournisseurBundle:Societe:delete }

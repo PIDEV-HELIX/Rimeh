@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>HELIX Stock</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('img/core-img/favicon.ico')}}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('style.css')}}">
+
+
+
+    <link href="image/favicon.png" rel="icon" type="image/png">
+    <link href="csss/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="javascript/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="csss/stylesheet.css" rel="stylesheet">
+    <link href="csss/responsive.css" rel="stylesheet">
+    <link href="javascript/owl-carousel/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="javascript/owl-carousel/owl.transitions.css" type="text/css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="javascript/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="javascript/template_js/jstree.min.js"></script>
+    <script type="text/javascript" src="javascript/template_js/template.js"></script>
+    <script type="text/javascript" src="javascript/common.js" ></script>
+    <script type="text/javascript" src="javascript/global.js"></script>
+    <script type="text/javascript" src="javascript/owl-carousel/owl.carousel.min.js"></script>
+
+
+
+
+</head>
+{% endblock %}
+{% block loader %}
+<body>
+<!-- Preloader -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader loader" style="display: block;"> <img src="image/loader.gif"  alt="#"/></div>
+
+    <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+{% endblock %}
+{% block NavBar %}
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+    <!-- Navbar Area -->
+    <div class="oneMusic-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                <nav style="align-content: center" class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                    <!-- Nav brand -->
+
+                    <!-- Navbar Toggler -->
+                    <div  class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="albums-store.html">Promotions</a></li>
+                                <li><a href="#">Produits</a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="albums-store.html"></a></li>
+                                        <li><a href="event.html">Events</a></li>
+                                        <li><a href="blog.html">News</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="elements.html">Elements</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="#">Dropdown</a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Even Dropdown</a></li>
+                                                <li><a href="#">Even Dropdown</a></li>
+                                                <li><a href="#">Even Dropdown</a></li>
+                                                <li><a href="#">Even Dropdown</a>
+                                                    <ul class="dropdown">
+                                                        <li><a href="#">Deeply Dropdown</a></li>
+                                                        <li><a href="#">Deeply Dropdown</a></li>
+                                                        <li><a href="#">Deeply Dropdown</a></li>
+                                                        <li><a href="#">Deeply Dropdown</a></li>
+                                                        <li><a href="#">Deeply Dropdown</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Even Dropdown</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="event.html">Events</a></li>
+                                <li><a href="blog.html">News</a></li>
+                                <li><a>Livraison</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/produitF/">Nos produits</a></li>
+                                        <li><a href="/livF/">Nos livraisons</a></li>
+                                        <li><a href="/reclamationF">Reclamations</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                            <!-- Login/Register & Cart Button -->
+                            <div class="login-register-cart-button d-flex align-items-center">
+                                <!-- Login/Register -->
+                               <div class="login-register-btn mr-50">
+                                   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                 <div style="color: #9a9fb0">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                       <a href="{{ path('fos_user_security_logout') }}">
+                                           {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+
+                                       </a>
+                                     {% if is_granted("ROLE_ADMIN") %}
+                                     <a href="/admin/home">/Dashbord </a>
+                                     {% endif %}
+                                 </div>
+                                   {% else %}
+                                       <a href="/register" id="loginBtn">Register / </a>
+                                       <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+
+                                   {% endif %}
+
+                                </div>
+
+                                <!-- Cart Button -->
+                                <div class="cart-btn">
+
+                                    <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ##### Header Area End ##### -->
+{% endblock %}
+<!-- ##### Hero Area Start ##### -->
+{% block Body %}
+
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Latest Albums Area Start ##### -->
+
+<!-- ##### Latest Albums Area End ##### -->
+
+<!-- ##### Buy Now Area Start ##### -->
+
+<!-- ##### Buy Now Area End ##### -->
+
+<!-- ##### Featured Artist Area Start ##### -->
+
+<!-- ##### Featured Artist Area End ##### -->
+
+<!-- ##### Miscellaneous Area Start ##### -->
+
+<!-- ##### Miscellaneous Area End ##### -->
+{% endblock %}
+{% block Footer %}
+<!-- ##### Footer Area Start ##### -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">Information</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="contact.html">About Us</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Wish List</a></li>
+                    <li><a href="#">Gift Certificates</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">Order History</a></li>
+                    <li><a href="#">Specials</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">My Account</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Order History</a></li>
+                    <li><a href="#">Wish List</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Gift Certificates</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">Extras</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="#">Delivery information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Product Recall</a></li>
+                    <li><a href="#">Gift Vouchers</a></li>
+                    <li><a href="#">Help & FAQs</a></li>
+                    <li><a href="#">Sale Only Today</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <div class="content_footercms_right">
+                    <div class="footer-contact">
+                        <h5 class="contact-title footer-title">Contact Us</h5>
+                        <ul class="ul-wrapper">
+                            <li><i class="fa fa-map-marker"></i><span class="location2">Offices Addresss:<br>
+                218,Drimlend Building<br>
+                Sarthana jakatnaka, Surat City <br>
+                Gujarat-395013  INDIA</span></li>
+                            <li><i class="fa fa-envelope"></i><span class="mail2"><a href="#">info@localhost.com</a><br>
+                <a href="#">your@domain.com</a></span></li>
+                            <li><i class="fa fa-mobile"></i><span class="phone2">+91 0987-654-321<br>
+                +91 0987-654-321</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div id="bottom-footer">
+                <ul class="footer-link">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="copyright"> Copyright - <a class="yourstore" href="http://www.lionode.com/"> Created by Lionode &copy; 2017 </a></div>
+                <div class="footer-bottom-cms">
+                    <div class="footer-payment">
+                        <ul>
+                            <li class="mastero"><a href="#"><img alt="" src="{{ asset('image/payment/mastero.jpg')}}"></a></li>
+                            <li class="visa"><a href="#"><img alt="" src="{{ asset('image/payment/visa.jpg')}}"></a></li>
+                            <li class="currus"><a href="#"><img alt="" src="{{ asset('image/payment/currus.jpg')}}"></a></li>
+                            <li class="discover"><a href="#"><img alt="" src="{{ asset('image/payment/discover.jpg')}}"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="scrollup">Scroll</a> </footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="{{ asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
+<!-- Popper js -->
+<script src="{{ asset('js/bootstrap/popper.min.js')}}"></script>
+<!-- Bootstrap js -->
+<script src="{{ asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<!-- All Plugins js -->
+<script src="{{ asset('js/plugins/plugins.js')}}"></script>
+<!-- Active js -->
+<script src="{{ asset('js/active.js')}}"></script>
+
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block Body %}
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({{ asset('img/bg-img/breadcumb3.jpg') }});">
+
+    </section>
+
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                        <h1>liv</h1>
+
+                        <table>
+                            <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ liv.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>DATE</th>
+                                <td>{{ liv.dateliv|date('Y-m-d\\TH:i:sP') }}</td>
+                            </tr>
+                            <tr>
+                                <th>streetadresse</th>
+                                <td>{{ liv.adresseStreet }}</td>
+                            </tr>
+                            <tr>
+                                <th>city</th>
+                                <td>{{ liv.city }}</td>
+                            </tr>
+                            <tr>
+                                <th>Dville</th>
+                                <td>{{ liv.ville }}</td>
+                            </tr>
+                            <tr>
+                                <th>CodeP</th>
+                                <td>{{ liv.codeP }}</td>
+                            </tr>
+                            <tr>
+                                <th>modelivraison</th>
+                                <td>{{ liv.modeliv }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <ul>
+                            <li>
+                                <a href="{{ path('liv_index') }}">Back to the list</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('liv_edit', { 'id': liv.id }) }}">Edit</a>
+                            </li>
+                            <li>
+                                {{ form_start(delete_form) }}
+                                <input type="submit" value="Delete">
+                                {{ form_end(delete_form) }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

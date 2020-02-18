@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Livr</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idv</th>
+                <td>{{ livr.idv }}</td>
+            </tr>
+            <tr>
+                <th>Namev</th>
+                <td>{{ livr.namev }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ livr.street }}</td>
+            </tr>
+            <tr>
+                <th>Cite</th>
+                <td>{{ livr.cite }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ livr.ville }}</td>
+            </tr>
+            <tr>
+                <th>Codep</th>
+                <td>{{ livr.codep }}</td>
+            </tr>
+            <tr>
+                <th>Emailv</th>
+                <td>{{ livr.emailv }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ livr.tel }}</td>
+            </tr>
+            <tr>
+                <th>Modelivrraison</th>
+                <td>{{ livr.modelivrraison }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('livr_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('livr_edit', { 'idv': livr.idv }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

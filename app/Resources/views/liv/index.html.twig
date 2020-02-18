@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block Body %}
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({{ asset('img/bg-img/breadcumb3.jpg') }});">
+
+    </section>
+
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                        <h1>livs list</h1>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+
+                                <th>adressestreet</th>
+                                <th>city</th>
+                                <th>ville</th>
+                                <th>codep</th>
+                                <th>modeliv</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for liv in livs %}
+                                <tr>
+                                    <td><a href="{{ path('liv_show', { 'id': liv.id }) }}">{{ liv.id }}</a></td>
+                                    <td>{{ liv.dateliv|date('Y-m-d\\TH:i:sP') }}</td>
+                                    <td>{{ liv.adresseStreet }}</td>
+                                    <td>{{ liv.city }}</td>
+                                    <td>{{ liv.ville }}</td>
+                                    <td>{{ liv.codeP }}</td>
+                                    <td>{{ liv.modeliv }}</td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('liv_show', { 'id': liv.id }) }}">show</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('liv_edit', { 'id': liv.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <ul>
+                            <li>
+                                <a href="{{ path('liv_new') }}">Create a new liv</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
